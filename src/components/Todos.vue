@@ -4,7 +4,7 @@
   <div v-bind:key="todo.id" v-for="todo in todos" todo_prop_sync="todo">
       
       <!-- <h3>Todos {{todo.id}} {{todo.title}}</h3> -->
-      <Item v-bind:todo="todo"/>
+      <Item v-bind:todo="todo" v-on:del-todo="$emit('del-todo',todo.id)"/>
   </div>
   </div>
 </template>

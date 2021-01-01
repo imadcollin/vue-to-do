@@ -7,6 +7,7 @@
 </h2>
   <input v-model="message" placeholder="edit me" />
   <p>Message is: {{ message }}</p>
+  <button @click="$emit('del-todo',todo.id)"> delete</button>
 </div>
 
 </template>
