@@ -1,13 +1,10 @@
 <template>
     <div class="item" v-bind:class='{"status":todo.status}'>
-<h2>{{todo.id}}  {{todo.title}}
-<input type="checkbox" v-model="changeStatus">
-<label for="checkbox">{{changeStatus}}</label>
+<h2> {{todo.title}} -  status
+<input type="checkbox" v-model="changeStatus">   <button class="del" @click="$emit('del-todo',todo.id)"> delete</button>
 
 </h2>
-  <input v-model="message" placeholder="edit me" />
-  <p>Message is: {{ message }}</p>
-  <button @click="$emit('del-todo',todo.id)"> delete</button>
+ 
 </div>
 
 </template>
@@ -38,4 +35,8 @@ h2 {
 .status{
     background-color: cadetblue;
     }    
+.del {
+    float:right;
+    margin-right: 10%;
+}
 </style>
