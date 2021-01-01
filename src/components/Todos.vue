@@ -1,32 +1,28 @@
 <template>
   <div class="Todos">
-  <h1>{{msg}}</h1>
-  <div v-bind:key="todo.id" v-for="todo in todos" todo_prop_sync="todo">
-      
-      <!-- <h3>Todos {{todo.id}} {{todo.title}}</h3> -->
-      <Item v-bind:todo="todo" v-on:del-todo="$emit('del-todo',todo.id)"/>
-  </div>
+    <h1>{{ msg }}</h1>
+    <div v-bind:key="todo.id" v-for="todo in todos" todo_prop_sync="todo">
+      <Item v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)" />
+    </div>
   </div>
 </template>
 
 <script>
-import Item from './Item'; 
+import Item from "./Item";
 export default {
-  name: 'Todos',
-  components:{
-      Item
-      },
+  name: "Todos",
+  components: {
+    Item,
+  },
   props: {
     msg: String,
-    todos: Array 
-  }
-// props:["todos"]
-}
+    todos: Array,
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  color:#000;
+  color: #000;
 }
 </style>
