@@ -1,7 +1,7 @@
 <template>
   <div class="Todos">
   <h1>{{msg}}</h1>
-  <div v-bind:key="todo.id" v-for="todo in todos">
+  <div v-bind:key="todo.id" v-for="todo in todos" todo_prop_sync="todo">
       
       <!-- <h3>Todos {{todo.id}} {{todo.title}}</h3> -->
       <Item v-bind:todo="todo"/>
