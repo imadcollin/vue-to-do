@@ -1,16 +1,21 @@
 <template>
   <div class="Todos">
   <h1>{{msg}}</h1>
-  <div v-bind:key="a.id" v-for="a in todos">
+  <div v-bind:key="todo.id" v-for="todo in todos">
       
-      <h3>Todos {{a.id}} {{a.title}}</h3>
+      <!-- <h3>Todos {{todo.id}} {{todo.title}}</h3> -->
+      <Item v-bind:todo="todo"/>
   </div>
   </div>
 </template>
 
 <script>
+import Item from './Item'; 
 export default {
   name: 'Todos',
+  components:{
+      Item
+      },
   props: {
     msg: String,
     todos: Array 
